@@ -37,3 +37,7 @@ yarn-error.log*
 
 # payload
 sqlite.db
+
+# Test Reports
+playwright-report/
+test-results/

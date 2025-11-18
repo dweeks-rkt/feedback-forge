@@ -135,7 +135,7 @@ export type FeedbackForgeConfig<TContext = any> = {
    * The full URL of the GitHub repository to be used in the Jules session source context.
    * E.g., 'your-org/your-repo'
    */
-  githubRepo: string;
+  githubRepo?: string;
 
   /**
    * The starting branch for the Jules session.

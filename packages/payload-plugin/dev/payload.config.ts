@@ -97,7 +97,6 @@ const buildConfigWithMemoryDB = async () => {
           apiKey: process.env.GOOGLE_API_KEY || 'test-key',
           temperature: 0.7,
         },
-        githubRepo: 'test/repo',
         allowAnonymousSubmissions: false,
         cron: '*/5 * * * *',
       }),

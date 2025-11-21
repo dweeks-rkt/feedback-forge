@@ -1,6 +1,6 @@
 {
   "name": "@feedback-forge/plugin-common",
-  "version": "0.3.0-beta.0",
+  "version": "0.3.0-beta.1",
   "description": "Shared business logic for Feedback Forge framework plugins",
   "author": "Feedback Forge",
   "license": "MIT",

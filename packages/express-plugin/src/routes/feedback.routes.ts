@@ -1,7 +1,10 @@
 import { Router, type Request, type Response } from 'express';
 import { FeedbackService } from '@feedback-forge/plugin-common';
 import type { ExpressFeedbackForgeConfig } from '../interfaces/express-config.interface.js';
-import { validateRequiredFields, validateOptionalFields } from '../middleware/validation.middleware.js';
+import {
+  validateRequiredFields,
+  validateOptionalFields,
+} from '../middleware/validation.middleware.js';
 
 /**
  * Create Express router for feedback endpoints
@@ -22,11 +25,7 @@ export function createFeedbackRouter(config: ExpressFeedbackForgeConfig): Router
       try {
         const { title, feedback, breadcrumbs } = req.body;
 
-        const result = await feedbackService.processFeedbackComplete(
-          title,
-          feedback,
-          breadcrumbs,
-        );
+        const result = await feedbackService.processFeedbackComplete(title, feedback, breadcrumbs);
 
         res.status(200).json({
           message: 'Feedback processed successfully',

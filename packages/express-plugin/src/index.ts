@@ -57,10 +57,7 @@ export * from './middleware/validation.middleware.js';
  * const app = server.build();
  * ```
  */
-export function registerFeedbackForge(
-  app: Application,
-  config: ExpressFeedbackForgeConfig,
-): void {
+export function registerFeedbackForge(app: Application, config: ExpressFeedbackForgeConfig): void {
   const routePrefix = config.routePrefix || '/feedback';
   const router = createFeedbackRouter(config);
   app.use(routePrefix, router);

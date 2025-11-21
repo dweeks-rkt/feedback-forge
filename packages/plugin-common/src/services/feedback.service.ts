@@ -25,10 +25,7 @@ export class FeedbackService {
   /**
    * Process feedback using AI to generate developer prompt
    */
-  async processFeedback(
-    feedback: string,
-    breadcrumbs?: string,
-  ): Promise<ProcessFeedbackResult> {
+  async processFeedback(feedback: string, breadcrumbs?: string): Promise<ProcessFeedbackResult> {
     this.logger.log('Processing feedback with AI');
 
     const feedbackProcessor = getFeedbackProcessor({
@@ -68,6 +65,7 @@ export class FeedbackService {
       owner: this.config.github.owner,
       repo: this.config.github.repo,
       token: this.config.github.token,
+      baseUrl: this.config.github.baseUrl,
     });
   }
 

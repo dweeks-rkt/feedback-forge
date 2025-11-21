@@ -37,10 +37,7 @@ export class FeedbackService {
     @Inject('FEEDBACK_FORGE_CONFIG')
     private readonly config: NestJSFeedbackForgeConfig,
   ) {
-    this.sharedService = new SharedFeedbackService(
-      config,
-      new NestJSLoggerAdapter(this.logger),
-    );
+    this.sharedService = new SharedFeedbackService(config, new NestJSLoggerAdapter(this.logger));
   }
 
   /**

@@ -32,6 +32,7 @@ yarn add @feedback-forge/core
 The **VercelAIProvider** offers access to multiple AI platforms through a single unified interface:
 
 **Supported Models:**
+
 - **OpenAI**: `openai:gpt-4o`, `openai:gpt-4-turbo`, `openai:gpt-3.5-turbo`
 - **Anthropic**: `anthropic:claude-3-5-sonnet-20241022`, `anthropic:claude-3-opus-20240229`
 - **Google**: `google:gemini-2.0-flash-exp`, `google:gemini-1.5-pro`
@@ -67,6 +68,7 @@ console.log(`Tokens used: ${result.usage.totalTokens}`);
 The **GenkitProvider** uses Google's Genkit framework for AI generation.
 
 **Supported Models:**
+
 - `gemini-2.5-flash`
 - `gemini-2.0-flash-exp`
 - `gemini-1.5-pro`
@@ -160,10 +162,7 @@ interface FeedbackForgeConfig {
 **Returns:**
 
 ```typescript
-type FeedbackProcessor = (input: {
-  feedback: string;
-  breadcrumbs?: string;
-}) => Promise<{
+type FeedbackProcessor = (input: { feedback: string; breadcrumbs?: string }) => Promise<{
   developerPrompt: string;
   usage: {
     inputTokens: number;
@@ -319,17 +318,20 @@ const processor = getFeedbackProcessor({
 ## Provider Selection Guide
 
 **Use Vercel AI SDK Provider when:**
+
 - You want flexibility to switch between OpenAI, Anthropic, and Google models
 - You need access to the latest models from multiple providers
 - You want a unified API across different AI platforms
 - You're starting a new project
 
 **Use Genkit Provider when:**
+
 - You have existing Genkit-based integrations
 - You prefer Google's Genkit framework
 - You exclusively use Google AI models
 
 **Use Custom Provider when:**
+
 - You have an internal AI service
 - You need specialized preprocessing/postprocessing
 - You want to implement custom caching or rate limiting
@@ -360,8 +362,8 @@ console.log(`Output tokens: ${result.usage.outputTokens}`);
 console.log(`Total tokens: ${result.usage.totalTokens}`);
 
 // Calculate costs (example: OpenAI GPT-4o pricing)
-const inputCost = (result.usage.inputTokens / 1_000_000) * 2.50; // $2.50 per 1M tokens
-const outputCost = (result.usage.outputTokens / 1_000_000) * 10.00; // $10.00 per 1M tokens
+const inputCost = (result.usage.inputTokens / 1_000_000) * 2.5; // $2.50 per 1M tokens
+const outputCost = (result.usage.outputTokens / 1_000_000) * 10.0; // $10.00 per 1M tokens
 console.log(`Estimated cost: $${(inputCost + outputCost).toFixed(6)}`);
 ```
 

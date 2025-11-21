@@ -23,6 +23,7 @@ export interface FeedbackForgePluginConfig {
     owner: string;
     repo: string;
     token: string;
+    baseUrl?: string;
   };
 
   /**

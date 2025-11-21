@@ -94,6 +94,7 @@ app.listen(3000, () => {
 Submit feedback and process with AI.
 
 **Request:**
+
 ```json
 {
   "title": "Login page is broken",
@@ -103,6 +104,7 @@ Submit feedback and process with AI.
 ```
 
 **Response:**
+
 ```json
 {
   "message": "Feedback processed successfully",
@@ -118,6 +120,7 @@ Submit feedback and process with AI.
 Manually create a GitHub issue.
 
 **Request:**
+
 ```json
 {
   "title": "Issue title",
@@ -130,6 +133,7 @@ Manually create a GitHub issue.
 Start a Jules AI coding session.
 
 **Request:**
+
 ```json
 {
   "title": "Fix login bug",
@@ -176,7 +180,7 @@ const myProvider: AIProvider = {
   async generateText(options) {
     // Your custom implementation
     return 'Generated text';
-  }
+  },
 };
 
 registerFeedbackForge(app, {
@@ -185,7 +189,7 @@ registerFeedbackForge(app, {
     customProvider: myProvider,
     model: 'not-used',
     apiKey: 'not-used',
-  }
+  },
 });
 ```
 
@@ -221,7 +225,7 @@ router.post(
   validateOptionalFields(['optionalField']),
   async (req, res) => {
     // Handler
-  }
+  },
 );
 ```
 
